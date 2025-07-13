@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ฝากข้อความ</title>
+    <style>
+        body {
+            background-color: #f3e5f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #4a148c;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 60%;
+            margin: 40px auto;
+            background-color: #ede7f6;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #6a1b9a;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        textarea {
+            width: 90%;
+            height: 80px;
+            border: 2px solid #ba68c8;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            resize: none;
+        }
+
+        button {
+            margin-top: 10px;
+            background-color: #8e24aa;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .message-box {
+            background-color: #f8bbd0;
+            border-left: 5px solid #7b1fa2;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .message-box:nth-child(even) {
+            background-color: #e1bee7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌸 ฝากข้อความไว้ที่นี่ 🌸</h1>
+        <form method="POST">
+            <textarea name="message" placeholder="เขียนข้อความของคุณที่นี่..." required></textarea><br>
+            <button type="submit">โพสต์ข้อความ</button>
+        </form>
+
+        <div>
+            {% for msg in messages %}
+                <div class="message-box">{{ msg }}</div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
